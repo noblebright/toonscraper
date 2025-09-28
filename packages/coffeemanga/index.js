@@ -4,10 +4,10 @@ import {
   fetchImage,
   localPathFromUrl,
   getBaseName,
+  AbstractPlugin,
 } from "@toonscraper/plugin-core";
 
-/** @type {import("@toonscraper/plugin-core").AbstractPlugin} */
-/** @implements {AbstractPlugin} */
+/** @type {AbstractPlugin} */
 export const CoffeeMangaPlugin = {
   name: "CoffeMangaPlugin",
 

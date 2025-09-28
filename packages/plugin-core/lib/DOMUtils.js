@@ -1,10 +1,10 @@
-import { parse } from "node-html-parser";
+import { HTMLElement, parse } from "node-html-parser";
 
 /**
  *
  * @param {string} url
  * @param {RequestInit} fetchOpts
- * @returns {HTMLElement}
+ * @returns {Promise<HTMLElement>}
  */
 export async function fetchDOM(url, fetchOpts = {}) {
   const rawDocument = await fetch(url, fetchOpts).then((x) => x.text());
@@ -16,9 +16,9 @@ export async function fetchDOM(url, fetchOpts = {}) {
  *
  * @param {string} url
  * @param {string} selector
- * @param {string | (HTMLElement) => string} attributeMapperFn
+ * @param {string | ((HTMLElement) => string)} attributeMapperFn
  * @param {RequestInit} fetchOpts
- * @returns {string[]}
+ * @returns {Promise<string[]>}
  */
 export async function fetchList(
   url,

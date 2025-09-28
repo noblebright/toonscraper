@@ -3,12 +3,11 @@ import {
   fetchList,
   fetchImage,
   fetchDOM,
-  localPathFromUrl,
   sequential,
+  AbstractPlugin,
 } from "@toonscraper/plugin-core";
 
-/** @type {import("@toonscraper/plugin-core").AbstractPlugin} */
-/** @implements {AbstractPlugin} */
+/** @type {AbstractPlugin  & { chapterNames }} */
 export const XBatoMangaPlugin = {
   name: "XBatoPlugin",
   chapterNames: {},
@@ -37,7 +36,7 @@ export const XBatoMangaPlugin = {
 
   async fetchChapter(url) {
     const DOM = await fetchDOM(url);
-    const scriptElements = DOM.querySelectorAll("script:not([src])");
+    const scriptElements = [...DOM.querySelectorAll("script:not([src])")];
     const scriptElement = scriptElements.find((x) =>
       x.innerText.includes("imgHttps")
     );

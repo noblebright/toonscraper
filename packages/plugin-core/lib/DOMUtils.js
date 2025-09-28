@@ -2,8 +2,8 @@ import { HTMLElement, parse } from "node-html-parser";
 
 /**
  *
- * @param {string} url
- * @param {RequestInit} fetchOpts
+ * @param {string} url URL of page
+ * @param {RequestInit} fetchOpts fetch() options
  * @returns {Promise<HTMLElement>}
  */
 export async function fetchDOM(url, fetchOpts = {}) {
@@ -14,10 +14,10 @@ export async function fetchDOM(url, fetchOpts = {}) {
 
 /**
  *
- * @param {string} url
- * @param {string} selector
- * @param {string | ((HTMLElement) => string)} attributeMapperFn
- * @param {RequestInit} fetchOpts
+ * @param {string} url URL of page
+ * @param {string} selector CSS Selector
+ * @param {string | ((HTMLElement) => string)} attributeMapperFn element.getAttribute() of string, or custom function
+ * @param {RequestInit} fetchOpts fetch() options
  * @returns {Promise<string[]>}
  */
 export async function fetchList(

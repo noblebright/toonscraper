@@ -1,5 +1,11 @@
 import fs from "node:fs";
 
+/**
+ *
+ * @param {string} url
+ * @param {RequestInit} opts
+ * @param {string} outFileName
+ */
 export async function fetchImage(url, opts, outFileName) {
   if (fs.existsSync(outFileName)) {
     console.log("skipping existing file:", outFileName);

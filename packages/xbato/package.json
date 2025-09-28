@@ -1,0 +1,17 @@
+{
+  "name": "@toonscraper/xbato",
+  "version": "1.0.0",
+  "description": "Toonscraper plugin for XBato",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@toonscraper/plugin-core": "workspace:"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "type": "module"
+}

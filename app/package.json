@@ -1,0 +1,19 @@
+{
+  "name": "@toonscraper/app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node scrape.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@toonscraper/coffeemanga": "workspace:",
+    "@toonscraper/xbato": "workspace:",
+    "adm-zip": "^0.5.16"
+  },
+  "type": "module"
+}

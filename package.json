@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scrape": "scrape.sh"
+    "scrape": "pnpm --filter @toonscraper/app scrape"
   },
   "keywords": [],
   "author": "",

@@ -7,7 +7,14 @@ import { HTMLElement, parse } from "node-html-parser";
  * @returns {Promise<HTMLElement>}
  */
 export async function fetchDOM(url, fetchOpts = {}) {
-  const rawDocument = await fetch(url, fetchOpts).then((x) => x.text());
+  const rawDocument = await fetch(url, fetchOpts).then((x) => {
+    if (x.ok) return x.text();
+    else {
+      console.log("Respnose Headers:");
+      x.headers.forEach((v, k) => console.log(`${k}: ${v}`));
+      throw new Error(x.statusText);
+    }
+  });
   const DOM = parse(rawDocument);
   return DOM;
 }
@@ -16,7 +23,7 @@ export async function fetchDOM(url, fetchOpts = {}) {
  *
  * @param {string} url URL of page
  * @param {string} selector CSS Selector
- * @param {string | ((HTMLElement) => string)} attributeMapperFn element.getAttribute() of string, or custom function
+ * @param {string | ((e: HTMLElement) => string)} attributeMapperFn element.getAttribute() of string, or custom function
  * @param {RequestInit} fetchOpts fetch() options
  * @returns {Promise<string[]>}
  */

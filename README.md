@@ -20,3 +20,4 @@ Toonscraper outputs its intermediate uncompressed files to app/output, and its p
 
 - www.coffeemanga.art
 - xbato.com
+- www.webtoons.com

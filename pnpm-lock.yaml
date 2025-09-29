@@ -13,6 +13,9 @@ importers:
       '@toonscraper/coffeemanga':
         specifier: 'workspace:'
         version: link:../packages/coffeemanga
+      '@toonscraper/webtoons':
+        specifier: 'workspace:'
+        version: link:../packages/webtoons
       '@toonscraper/xbato':
         specifier: 'workspace:'
         version: link:../packages/xbato
@@ -31,6 +34,12 @@ importers:
       node-html-parser:
         specifier: ^7.0.1
         version: 7.0.1
+
+  packages/webtoons:
+    dependencies:
+      '@toonscraper/plugin-core':
+        specifier: 'workspace:'
+        version: link:../plugin-core
 
   packages/xbato:
     dependencies:

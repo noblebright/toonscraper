@@ -13,6 +13,7 @@
   "dependencies": {
     "@toonscraper/coffeemanga": "workspace:",
     "@toonscraper/xbato": "workspace:",
+    "@toonscraper/webtoons": "workspace:",
     "adm-zip": "^0.5.16"
   },
   "type": "module"

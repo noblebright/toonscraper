@@ -42,6 +42,13 @@ export function localPathFromUrl(url, baseDir) {
 export function sequential(url, baseDir, idx) {
   const baseName = getBaseName(url);
   const ext = path.extname(baseName);
-  const outFileName = path.join(baseDir, `${idx}${ext}`);
+  const outFileName = path.join(baseDir, `${pad(idx)}${ext}`);
   return outFileName;
+}
+
+function pad(n) {
+  const digits = `${n}`.length;
+  console.log(digits);
+  const padding = new Array(5 - digits).fill("0").join("");
+  return `${padding}${n}`;
 }

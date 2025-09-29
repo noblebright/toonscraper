@@ -2,9 +2,9 @@ import {
   host,
   fetchList,
   fetchImage,
-  localPathFromUrl,
   getBaseName,
   AbstractPlugin,
+  sequential,
 } from "@toonscraper/plugin-core";
 
 /** @type {AbstractPlugin} */
@@ -32,7 +32,7 @@ export const CoffeeMangaPlugin = {
     return getBaseName(url);
   },
 
-  async downloadImage(image, outDirName) {
+  async downloadImage(image, outDirName, idx) {
     return fetchImage(
       image,
       {
@@ -54,7 +54,7 @@ export const CoffeeMangaPlugin = {
           Referer: "https://www.coffeemanga.art/",
         },
       },
-      localPathFromUrl(image, outDirName)
+      sequential(image, outDirName, idx)
     );
   },
 };

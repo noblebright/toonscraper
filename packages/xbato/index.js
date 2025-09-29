@@ -12,7 +12,6 @@ export const XBatoMangaPlugin = {
   name: "XBatoPlugin",
   chapterNames: {},
   handles(url) {
-    console.log(host(url));
     return host(url) === "xbato.com";
   },
 

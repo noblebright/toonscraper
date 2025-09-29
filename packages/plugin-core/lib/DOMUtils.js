@@ -10,7 +10,7 @@ export async function fetchDOM(url, fetchOpts = {}) {
   const rawDocument = await fetch(url, fetchOpts).then((x) => {
     if (x.ok) return x.text();
     else {
-      console.log("Respnose Headers:");
+      console.log("Response Headers:");
       x.headers.forEach((v, k) => console.log(`${k}: ${v}`));
       throw new Error(x.statusText);
     }

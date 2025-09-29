@@ -11,7 +11,6 @@ export const WebtoonsPlugin = {
   name: "WebtoonsPlugin",
   chapterNames: {},
   handles(url) {
-    console.log(host(url));
     return host(url) === "www.webtoons.com";
   },
 

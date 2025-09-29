@@ -21,18 +21,6 @@ export function getBaseName(url) {
 }
 
 /**
- * Returns path to save a file based on basename of url
- * @param {string} url
- * @param {string} baseDir
- * @returns {string}
- */
-export function localPathFromUrl(url, baseDir) {
-  const baseName = getBaseName(url);
-  const outFileName = path.join(baseDir, baseName);
-  return outFileName;
-}
-
-/**
  * Returns path to save a file based on sequential index
  * @param {string} url
  * @param {string} baseDir
@@ -46,9 +34,13 @@ export function sequential(url, baseDir, idx) {
   return outFileName;
 }
 
+/**
+ * returns the number n right-padded to 5 digits.
+ * @param {number} n
+ * @returns {string}
+ */
 function pad(n) {
   const digits = `${n}`.length;
-  console.log(digits);
   const padding = new Array(5 - digits).fill("0").join("");
   return `${padding}${n}`;
 }

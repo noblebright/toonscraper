@@ -8,7 +8,7 @@ import path from "node:path";
 const PLUGINS = [CoffeeMangaPlugin, XBatoMangaPlugin, WebtoonsPlugin];
 
 function normalizeName(str) {
-  return str.replaceAll(/[:><\[\]"|\\/?*]/g, "");
+  return str.replaceAll(/[:><\[\]"|\\/?*]/g, "").replaceAll(/\n/g, " ");
 }
 
 /**

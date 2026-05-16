@@ -13,6 +13,9 @@ importers:
       '@toonscraper/coffeemanga':
         specifier: 'workspace:'
         version: link:../packages/coffeemanga
+      '@toonscraper/comixto':
+        specifier: 'workspace:'
+        version: link:../packages/comixto
       '@toonscraper/webtoons':
         specifier: 'workspace:'
         version: link:../packages/webtoons
@@ -24,6 +27,18 @@ importers:
         version: 0.5.16
 
   packages/coffeemanga:
+    dependencies:
+      '@toonscraper/plugin-core':
+        specifier: 'workspace:'
+        version: link:../plugin-core
+
+  packages/comixto:
+    dependencies:
+      '@toonscraper/plugin-core':
+        specifier: 'workspace:'
+        version: link:../plugin-core
+
+  packages/mangatown:
     dependencies:
       '@toonscraper/plugin-core':
         specifier: 'workspace:'

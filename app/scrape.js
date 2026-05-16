@@ -1,11 +1,17 @@
 import { CoffeeMangaPlugin } from "@toonscraper/coffeemanga";
 import { XBatoMangaPlugin } from "@toonscraper/xbato";
 import { WebtoonsPlugin } from "@toonscraper/webtoons";
+import { ComixToMangaPlugin } from "@toonscraper/comixto";
 import { pack } from "./pack.js";
 import fs from "node:fs";
 import path from "node:path";
 
-const PLUGINS = [CoffeeMangaPlugin, XBatoMangaPlugin, WebtoonsPlugin];
+const PLUGINS = [
+  CoffeeMangaPlugin,
+  XBatoMangaPlugin,
+  WebtoonsPlugin,
+  ComixToMangaPlugin,
+];
 
 function normalizeName(str) {
   return str.replaceAll(/[:><\[\]"|\\/?*]/g, "").replaceAll(/\n/g, " ");

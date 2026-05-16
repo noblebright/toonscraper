@@ -17,7 +17,7 @@ export const XBatoMangaPlugin = {
 
   async fetchTitle(url) {
     const list = await fetchList(url, ".item-title", (e) =>
-      e.textContent.trim()
+      e.textContent.trim(),
     );
     return list[0];
   },
@@ -34,13 +34,14 @@ export const XBatoMangaPlugin = {
   },
 
   async fetchChapter(url) {
-    const DOM = await fetchDOM(url);
+    const DOMHolder = await fetchDOM(url);
+    const DOM = DOMHolder.DOM;
     const scriptElements = [...DOM.querySelectorAll("script:not([src])")];
     const scriptElement = scriptElements.find((x) =>
-      x.innerText.includes("imgHttps")
+      x.innerText.includes("imgHttps"),
     );
     const imageList = JSON.parse(
-      scriptElement.textContent.match(/const imgHttps = (\[[^[\]]+\])/)[1]
+      scriptElement.textContent.match(/const imgHttps = (\[[^[\]]+\])/)[1],
     );
     return imageList;
   },
@@ -71,7 +72,7 @@ export const XBatoMangaPlugin = {
           Referer: "https://xbato.com/",
         },
       },
-      sequential(image, outDirName, idx)
+      sequential(image, outDirName, idx),
     );
   },
 };

@@ -12,6 +12,7 @@
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "@toonscraper/coffeemanga": "workspace:",
+    "@toonscraper/comixto": "workspace:",
     "@toonscraper/xbato": "workspace:",
     "@toonscraper/webtoons": "workspace:",
     "adm-zip": "^0.5.16"

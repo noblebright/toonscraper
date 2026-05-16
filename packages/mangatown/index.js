@@ -7,11 +7,11 @@ import {
 } from "@toonscraper/plugin-core";
 
 /** @type {AbstractPlugin} */
-export const CoffeeMangaPlugin = {
-  name: "CoffeMangaPlugin",
+export const MangaTownPlugin = {
+  name: "MangaTownPlugin",
 
   handles(url) {
-    return host(url) === "coffeemanga.ink";
+    return host(url) === "sso.mangatown.com";
   },
 
   async fetchTitle(url) {
@@ -20,7 +20,7 @@ export const CoffeeMangaPlugin = {
   },
 
   async fetchIndex(url) {
-    return (await fetchList(url, ".wp-manga-chapter a", "href")).reverse();
+    return (await fetchList(url, ".chapter-list a", "href")).reverse();
   },
 
   async fetchChapter(url) {
